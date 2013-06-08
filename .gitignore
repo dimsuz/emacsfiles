@@ -1,0 +1,5 @@
+elpa/
+url/
+exts/yasnippet
+snippets/ruby-mode
+session.*
