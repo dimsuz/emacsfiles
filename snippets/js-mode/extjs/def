@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Ext.define()
+# key: def
+# --
+Ext.define('$1', {
+  extend: '$2',
+  $0
+});

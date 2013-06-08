@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: before test
+# key: ph
+# --
+<?php
+$0
+?>

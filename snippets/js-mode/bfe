@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: before each
+# key: bfe
+# --
+beforeEach(function(${1:${2:done}}) {
+$0
+});

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expect().to.match
+# key: expmat
+# --
+expect($1).to.match(/$0/);

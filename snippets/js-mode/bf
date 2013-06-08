@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: before test
+# key: bf
+# --
+before(function() {
+$0
+});

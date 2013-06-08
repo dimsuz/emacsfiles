@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expect().to.be.false
+# key: expf
+# --
+expect($0).to.be.false;
