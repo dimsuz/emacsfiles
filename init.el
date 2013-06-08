@@ -6,15 +6,21 @@
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path plugins-dir)
 
-(require 'default-vars)
-(require 'dimka-global-keys)
-(require 'dimka-functions)
-
 (require 'package)
 (package-initialize)
 ;; Add the user-contributed repository
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+
+; require evil mode before dimka-global-keys - it uses it
+; to define some mappings
+(require 'evil)
+(evil-mode 1)
+
+(require 'default-vars)
+(require 'dimka-global-keys)
+(require 'dimka-functions)
+
 
 (require 'whole-line-or-region)
 (require 'php-mode)
@@ -80,3 +86,9 @@
 (add-to-list 'load-path (expand-file-name "autopair" plugins-dir))
 (require 'autopair)
 (autopair-global-mode)
+
+;; Fonts
+(set-face-attribute 'default nil :font "Terminus-13:weight=bold")
+
+;; Turn off all alarms (visual bell, beeping)
+(setq ring-bell-function 'ignore)
