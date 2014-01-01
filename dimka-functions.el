@@ -1,4 +1,5 @@
 (provide 'dimka-functions)
+
 (defun run-mocha-tests ()
   "Run mocha tests in other window which is eshell"
   (interactive)
@@ -82,6 +83,12 @@
   (open-line arg)
   (when newline-and-indent
     (indent-according-to-mode)))
+
+(defun paredit-open-curly-java-style (arg)
+  (interactive "p")
+  (paredit-open-curly)
+  (newline-and-indent)
+  (open-previous-line arg))
 
 ;; Autoindent open-*-lines
 (defvar newline-and-indent t

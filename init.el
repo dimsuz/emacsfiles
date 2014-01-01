@@ -11,19 +11,24 @@
 ;; Add the user-contributed repository
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 ; require evil mode before dimka-global-keys - it uses it
 ; to define some mappings
-(require 'evil)
-(evil-mode 1)
+; (require 'evil)
+; (evil-mode 1)
 
 (require 'default-vars)
 (require 'dimka-global-keys)
 (require 'dimka-functions)
-
+(require 'android-setup)
 
 (require 'whole-line-or-region)
 (require 'php-mode)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
 
 ; load customisations from this file
 ; in some cases it is required that it is loded early
@@ -49,10 +54,19 @@
 (add-hook 'javascript-mode-hook
      (lambda () (flymake-mode t)))
 
+;; Clojure
+(add-hook 'clojure-mode-hook
+          'paredit-mode)
+
+;; Scheme/racket
+(add-hook 'scheme-mode-hook
+          'paredit-mode)
+
 ;; Global modes
 (whole-line-or-region-mode)
 (show-paren-mode)
 (ido-mode)
+;(helm-mode 1)
 (global-subword-mode 1)
 
 ;; Hippie-expand
@@ -83,12 +97,14 @@
 (yas/global-mode 1)
 
 ;; Auto Pair
-(add-to-list 'load-path (expand-file-name "autopair" plugins-dir))
-(require 'autopair)
-(autopair-global-mode)
+;; (add-to-list 'load-path (expand-file-name "autopair" plugins-dir))
+;; (require 'autopair)
+;; (autopair-global-mode)
 
 ;; Fonts
 (set-face-attribute 'default nil :font "Terminus-13:weight=bold")
 
 ;; Turn off all alarms (visual bell, beeping)
 (setq ring-bell-function 'ignore)
+
+(add-hook 'after-init-hook '(lambda() (if window-system (set-frame-size (selected-frame) 120 35))))
