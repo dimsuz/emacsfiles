@@ -22,7 +22,8 @@
 (require 'default-vars)
 (require 'dimka-global-keys)
 (require 'dimka-functions)
-(require 'android-setup)
+;(require 'thing-edit)
+;(require 'android-setup)
 
 (require 'whole-line-or-region)
 (require 'php-mode)
@@ -91,10 +92,10 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; YaSnippet
-(add-to-list 'load-path (expand-file-name "yasnippet" plugins-dir))
-(require 'yasnippet)
-(setq yas/snippet-dirs '("~/.emacs.d/snippets"))
-(yas/global-mode 1)
+;; (add-to-list 'load-path (expand-file-name "yasnippet" plugins-dir))
+;; (require 'yasnippet)
+;; (setq yas/snippet-dirs '("~/.emacs.d/snippets"))
+;; (yas/global-mode 1)
 
 ;; Auto Pair
 ;; (add-to-list 'load-path (expand-file-name "autopair" plugins-dir))
