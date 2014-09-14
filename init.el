@@ -16,8 +16,8 @@
 
 ; require evil mode before dimka-global-keys - it uses it
 ; to define some mappings
-; (require 'evil)
-; (evil-mode 1)
+(require 'evil)
+(evil-mode 1)
 
 (require 'default-vars)
 (require 'dimka-global-keys)
@@ -57,7 +57,8 @@
 
 ;; Clojure
 (add-hook 'clojure-mode-hook
-          'paredit-mode)
+          'paredit-mode
+          'evil-paredit-mode)
 
 ;; Scheme/racket
 (add-hook 'scheme-mode-hook
@@ -104,6 +105,7 @@
 
 ;; Fonts
 (set-face-attribute 'default nil :font "Terminus-13:weight=bold")
+(set-face-attribute 'variable-pitch nil :font "Terminus-13:weight=bold")
 
 ;; Turn off all alarms (visual bell, beeping)
 (setq ring-bell-function 'ignore)
