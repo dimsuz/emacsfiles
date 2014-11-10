@@ -2,8 +2,7 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 
-(setq plugins-dir (expand-file-name "exts" dotfiles-dir))
-(add-to-list 'load-path dotfiles-dir)
+(setq plugins-dir (expand-file-name "lisp" dotfiles-dir))
 (add-to-list 'load-path plugins-dir)
 
 (require 'package)
@@ -26,7 +25,7 @@
 ;(require 'android-setup)
 
 (require 'whole-line-or-region)
-(require 'php-mode)
+;(require 'php-mode)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
@@ -51,9 +50,9 @@
 ;(push '("*eshell*" :noselect t :position right :width 50) popwin:special-display-config)
 
 ;; JsHint + Flymake
-(require 'flymake-jshint)
-(add-hook 'javascript-mode-hook
-     (lambda () (flymake-mode t)))
+;; (require 'flymake-jshint)
+;; (add-hook 'javascript-mode-hook
+;;      (lambda () (flymake-mode t)))
 
 ;; Clojure
 (add-hook 'clojure-mode-hook
