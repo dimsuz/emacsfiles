@@ -63,6 +63,12 @@
 (add-hook 'scheme-mode-hook
           'paredit-mode)
 
+;; Haskell
+(add-hook 'haskell-mode-hook
+          'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook
+          (lambda () (haskell-indentation-disable-show-indentations)) t)
+
 ;; Global modes
 (whole-line-or-region-mode)
 (show-paren-mode)
